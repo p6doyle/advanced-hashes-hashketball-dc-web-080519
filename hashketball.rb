@@ -52,22 +52,6 @@ def player_stats(player_name)
   end
 end
 
-# old one - when players pointed to hash
-# def big_shoe_rebounds
-#   shoe_size = 0
-#   rebounds = 0
-#   game_hash.each do |location, team_data|
-#     team_data[:players].each do |current_player, player_data|
-#       current_shoe = player_data[:shoe]
-#       if current_shoe > shoe_size
-#         shoe_size = current_shoe
-#         rebounds = player_data[:rebounds]
-#       end
-#     end
-#   end
-#   rebounds
-# end
-
 def big_shoe_rebounds
   shoe_size = 0
   rebounds = 0
@@ -84,22 +68,6 @@ def big_shoe_rebounds
   end
   rebounds
 end
-
-# old one - when players pointed to hash
-# def most_points_scored
-#   points_scored = 0
-#   player = "banana"
-#   game_hash.each do |location, team_data|
-#     team_data[:players].each do |current_player, player_data|
-#       current_points = player_data[:points]
-#       if current_points > points_scored
-#         points_scored = current_points
-#         player = current_player
-#       end
-#     end
-#   end
-#   player
-# end
 
 def most_points_scored
   points_scored = 0
@@ -118,17 +86,6 @@ def most_points_scored
   player_match
 end
 
-# old one - when players pointed to hash
-# def winning_team
-#   my_hash = Hash.new(0)
-#   game_hash.each do |location, team_data|
-#     team_data[:players].each do |current_player, player_data|
-#       my_hash[team_data[:team_name]] += player_data[:points]
-#     end
-#   end
-#   my_hash.key(my_hash.values.max)
-# end
-
 def winning_team
   my_hash = Hash.new(0)
   game_hash.each do |location, team_data|
@@ -141,21 +98,7 @@ def winning_team
   my_hash.key(my_hash.values.max)
 end
 
-# old one - when players pointed to a hash
-# def player_with_longest_name
-#   player = "banana"
-#   length = 0
-#   game_hash.each do |location, team_data|
-#     team_data[:players].each do |current_player, player_data|
-#       current_length = current_player.length
-#       if current_length > length
-#         length = current_length
-#         player = current_player
-#       end
-#     end
-#   end
-#   player
-# end
+
 def player_with_longest_name
   long_name = "banana"
   length = 0
@@ -173,21 +116,6 @@ def player_with_longest_name
   long_name
 end
 
-# old one - when players pointed to a hash
-# def long_name_steals_a_ton?
-#   stealz = 0
-#   player = "banana"
-#   game_hash.each do |location, team_data|
-#     team_data[:players].each do |current_player, player_data|
-#       if player_data[:steals] > stealz
-#         stealz = player_data[:steals]
-#         player = current_player
-#       end
-#     end
-#   end
-#   player == player_with_longest_name
-# end
-
 def long_name_steals_a_ton?
   stealz = 0
   player_with_most_steals = "banana"
@@ -204,7 +132,6 @@ def long_name_steals_a_ton?
   player_with_most_steals == player_with_longest_name
 end
 
-# le hash - I just copy/pasted from the last time I did this lab; I am not building this hash again lol
 def game_hash
   {
     home: {
