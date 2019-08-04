@@ -10,16 +10,6 @@ def num_points_scored(player_name)
   end
 end
 
-## old code - from when players pointed to a hash
-# def num_points_scored(player_name)
-#   game_hash.each do |location, team_data|
-#     team_data[:players].each do |current_player, player_data|
-#       binding.pry
-#       return player_data[:points] if player_name == current_player
-#     end
-#   end
-# end
-
 def shoe_size(player_name)
   game_hash.each do |location, team_data|
     team_data[:players].each do |player|
@@ -30,15 +20,6 @@ def shoe_size(player_name)
   end
 end
 
-## old code - from when players pointed to a hash
-# def shoe_size(player_name)
-#   game_hash.each do |location, team_data|
-#     team_data[:players].each do |current_player, player_data|
-#       return player_data[:shoe] if player_name == current_player
-#     end
-#   end
-# end
-
 def team_colors(team_name)
   game_hash.each do |location, team_data|
     return team_data[:colors] if team_data[:team_name] == team_name
@@ -48,18 +29,6 @@ end
 def team_names
   game_hash.collect { |location, team_data| team_data[:team_name] }
 end
-
-
-# old code - when players pointed to a hash:
-# def player_numbers(team_name)
-#   game_hash.collect do |location, team_data|
-#     if team_data[:team_name] == team_name
-#       team_data[:players].collect do |player_name, player_data|
-#         player_data[:number]
-#       end
-#     end
-#   end.flatten.compact
-# end
 
 def player_numbers(team_name)
   game_hash.collect do |location, team_data|
@@ -73,29 +42,6 @@ def player_numbers(team_name)
   end.flatten.compact
 end
 
-# or, could do this way
-# def player_numbers(team_name)
-#   player_nums = []
-#   game_hash.each do |location, team_data|
-#     if team_data[:team_name] == team_name
-#       team_data[:players].each do |player|
-#         player.each do |name, data|
-#           player_nums << player[name][:number]
-#         end
-#       end
-#     end
-#   end
-#   player_nums
-# end
-
-# old one - when player pointed to hash
-# def player_stats(player_name)
-#   game_hash.each do |location, team_data|
-#     team_data[:players].each do |current_player, player_data|
-#       return player_data if player_name == current_player
-#     end
-#   end
-# end
 def player_stats(player_name)
   game_hash.each do |location, team_data|
     team_data[:players].each do |player|
